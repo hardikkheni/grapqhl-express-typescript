@@ -1,0 +1,42 @@
+{
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon -e ts -w src --exec 'ts-node -T src/index.ts'",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:create": "sh -c 'yarn typeorm migration:create src/database/migrations/$0'",
+    "migration:run": "yarn typeorm migration:run -d src/database/index.ts",
+    "migration:revert": "yarn typeorm migration:revert -d src/database/index.ts"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/node": "^17.0.31",
+    "nodemon": "^2.0.16",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "apollo-server-core": "^3.8.2",
+    "apollo-server-express": "^3.8.1",
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.2",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "graphql": "^15.3.0",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "typedi": "^0.10.0",
+    "typeorm": "^0.3.6"
+  }
+}
